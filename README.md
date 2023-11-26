@@ -3,7 +3,7 @@ This is a simple Controll Panel to controll your Hue Devices using the Philips H
 
 ## Installation
 1. Clone all files to your Server directory
-2. Set the API Key and the Bridge Ip Address [info (Click)](https://developers.meethue.com/develop/get-started-2/)
+2. Set the API Key and the Bridge Ip Address in the `api.js` file. [info (Click)](https://developers.meethue.com/develop/get-started-2/)
 
 ## License
 
