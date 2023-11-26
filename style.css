@@ -1,0 +1,295 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.page__content {
+    padding: 0;
+    margin: 0;
+    background: url(/img/background.jpg) center center no-repeat;
+    background-size: cover;
+}
+.page__content .page__content__wrapper {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.295);
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.page__content .page__content__wrapper::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
+}
+.page__content .page__content__wrapper::-webkit-scrollbar-thumb {
+    background-color: rgb(82, 82, 82);
+    border-radius: 300px;
+}
+
+.navbar {
+    width: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.4s;
+    transform: translateX(-100%);
+    opacity: 0;
+    overflow: scroll;
+    position: sticky;
+    top: 0;
+    border-right: 1px solid rgb(146, 146, 146);
+    background-color: rgb(243, 243, 243);
+    border-radius: 0 10px 10px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 999;
+}
+.navbar.active {
+    transform: translateX(0%);
+    width: 40ch;
+    opacity: 1;
+}
+.navbar::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
+}
+.navbar::-webkit-scrollbar-thumb {
+    background-color: rgb(82, 82, 82);
+    border-radius: 300px;
+}
+
+.navbar .navbar__devices {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    overflow: hidden;
+}
+.navbar .navbar__devices .group {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px 10px;
+    border-bottom: 1px solid;
+}
+.navbar .navbar__devices .group a {
+    cursor: pointer;
+    text-decoration: none;
+}
+.navbar .navbar__devices .group.active .device__content {
+    display: unset;
+}
+.navbar .navbar__devices .group .device__content {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+.navbar .navbar__devices .group .group__title {
+    display: block;
+    width: 100%;
+}
+.navbar .navbar__devices .group .group__title:hover, .navbar .navbar__devices .group.active .group__title {
+    color: rgb(247, 34, 34);
+    font-weight: bold;
+}
+.navbar .navbar__devices .group p {
+    cursor: pointer;
+}
+.navbar .navbar__devices .group p:hover {
+    color: rgb(62, 137, 235);
+    font-weight: bold;
+}
+
+.navbar__button {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    justify-content: space-between;
+    position: sticky;
+    left: 10px;
+    top: 10px;
+    overflow: hidden;
+    margin: 10px;
+    background-color: transparent;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 4ch;
+    height: 3ch;
+}
+.navbar__button span {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    transition: 0.3s;
+    position: unset;
+}
+.navbar__button.active span:nth-child(1) {
+    transform: translate(-200%);
+}
+.navbar__button.active span:nth-child(2) {
+    transform: rotate(43deg);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.navbar__button.active span:nth-child(3) {
+    transform: rotate(-43deg);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+@media (max-width: 600px) {
+    .page__content .page__content__wrapper {
+        flex-wrap: wrap;
+    }
+
+    .navbar {
+        width: 100vw;
+        height: 0;
+        transform: translateY(-100%);
+        position: unset;
+        border-right: unset;
+        border-bottom: 1px solid rgb(146, 146, 146);
+    }
+    .navbar.active {
+        width: 100vw;
+        height: max-content;
+        transform: translateY(0%);
+        position: relative;
+    }
+    .navbar__button {
+        position: relative;
+    }
+}
+
+
+
+.devices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.devices .group__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    flex-direction: column;
+}
+.devices .group__list li div:nth-child(1) {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.devices .group__list li div:nth-child(1) h1 {
+    font-size: large;
+    width: max-content;
+    margin: 0px;
+}
+.devices .group__list li .device {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(73, 73, 73, 0.384);
+    border-radius: 10px;
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 25ch;
+    height: 7ch;
+    margin: 0;
+    margin: 10px;
+    cursor: pointer;
+}
+.devices .group__list li .device .icon__container {
+    border-radius: 10px;
+    width: 5ch;
+    height: 5ch;
+    padding: 5px;
+    background-color: rgba(73, 73, 73, 0.384);
+}
+.devices .group__list li .device .icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+}
+
+
+.switch {
+    --width: 7ch;
+    background-color: grey;
+    position: relative;
+    width: var(--width);
+    height: 4ch;
+    border-radius: 300px;
+    margin: 0;
+    margin-bottom: 30px;
+    overflow: hidden;
+    display: inline-block;
+
+}
+
+.switch::after {
+    position: absolute;
+    content: "";
+    width: calc(var(--width) / 2);
+    height: 90%;
+    background-color: white;
+    border-radius: 300px;
+    transition: 0.4s;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.switch.active::after {
+    background: #bada55;
+    transform: translate(100%);
+}
+
+
+.title {
+    font-size: xx-large;
+    border-bottom: 1px solid rgb(77, 77, 77);
+    background-color: rgba(255, 255, 255, 0.425);
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    position:sticky;
+    top: 0;
+    z-index: 999;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+}
+.title::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.548);
+    filter: blur(10px);
+    z-index: 1;
+}

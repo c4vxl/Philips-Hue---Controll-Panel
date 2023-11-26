@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script defer src="/api.js"></script>
+    <script defer src="script.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="options">
+            <h1 id="name"></h1>
+
+            <input type="checkbox" id="switch" class="onoffswitch"/><label class="onoffswitch__label" for="switch">Toggle</label>
+
+            <div class="picker">
+                <div class="color__picker inactive" onclick="this.classList.remove('inactive')">
+                    <h1>Set Color</h1>
+                    <div>
+                        <label for="red__slider">Red:</label>
+                        <input type="range" id="red__slider" name="red__slider" min="0" max="255" value="0" onchange="this.parentNode.querySelectorAll('input')[1].value = this.value;">
+                        <input type="number" onchange="this.parentNode.querySelector('input').value = this.value;" value="0">
+                    </div>
+    
+                    <div>
+                        <label for="green__slider">Green:</label>
+                        <input type="range" id="green__slider" name="green__slider" min="0" max="255" value="0" onchange="this.parentNode.querySelectorAll('input')[1].value = this.value;">
+                        <input type="number" onchange="this.parentNode.querySelector('input').value = this.value;" value="0">
+                    </div>
+    
+                    <div>
+                        <label for="blue__slider">Blue:</label>
+                        <input type="range" id="blue__slider" name="blue__slider" min="0" max="255" value="0" onchange="this.parentNode.querySelectorAll('input')[1].value = this.value;">
+                        <input type="number" onchange="this.parentNode.querySelector('input').value = this.value;" value="0">
+                    </div>
+    
+                    <br>
+    
+                    <div class="color__preview"></div>
+                </div>
+    
+    
+    
+                <div class="brightness__picker inactive" onclick="this.classList.remove('inactive')">
+                    <h1>Set Brightness</h1>
+                    <div>
+                        <label for="brightness__slider">Brightness:</label>
+                        <input type="range" id="brightness__slider" name="brightness__slider" min="0" max="254" value="0" onchange="this.parentNode.querySelectorAll('input')[1].value = this.value;">
+                        <input type="number" onchange="this.parentNode.querySelector('input').value = this.value;" value="0">
+                    </div>
+    
+                    <br>
+    
+                    <div class="brightness__preview"></div>
+                </div>
+            </div>
+            
+
+            <button onclick="window.location.href = '/';">Go Back</button>
+        </div>
+    </div>
+</body>
+</html>
