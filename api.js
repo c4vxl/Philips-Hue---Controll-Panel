@@ -176,7 +176,7 @@ class hueAPI {
 }
 
 
-const KEY = "hgtbud9tfRxPhR5aJx90v-0G3Goqts0jeKL8sDeH";
-const BRIGE_IP = "192.168.2.230";
+const KEY = "your_key";
+const BRIGE_IP = "bridge_ip";
 
 const api = new hueAPI(KEY, BRIGE_IP);
