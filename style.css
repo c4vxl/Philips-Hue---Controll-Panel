@@ -260,8 +260,10 @@ body {
     bottom: 0;
     margin: auto;
 }
-.switch.active::after {
+.switch.active {
     background: #bada55;
+}
+.switch.active::after {
     transform: translate(100%);
 }
 
